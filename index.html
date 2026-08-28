@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oliver Sain — AI Automation Specialist &amp; Technical VA</title>
+<meta name="description" content="AI automation specialist with 100+ delivered builds in n8n, Make.com and Zapier. AI agents, CRM pipelines and chatbots that run your ops 24/7." />
+<meta property="og:title" content="Oliver Sain — AI Automation Specialist" />
+<meta property="og:description" content="n8n, Make.com and Zapier certified. AI agents, CRM automation and chatbots for growing businesses." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top">
+      <!-- Embossed text logo: white shadow up-left, dark shadow down-right -->
+      <span class="logo-name nm-emboss">Oliver Sain<span class="accent">.</span></span>
+      <span class="logo-sub">AI AUTOMATION SPECIALIST</span>
+    </a>
+    <nav class="nav-desktop" aria-label="Main" id="navDesktop"></nav>
+    <button type="button" class="nav-toggle nm-press" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <nav class="nav-mobile nm-raised" id="navMobile" aria-label="Mobile" hidden></nav>
+</header>
+
+<main>
+<!-- ════════ HERO ════════ -->
+<section id="top" class="wrap hero">
+  <div class="hero-grid">
+    <div class="reveal">
+      <span class="pill nm-inset-sm accent" style="font-weight:700;font-size:.75rem;letter-spacing:.06em">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5l-1.9-5.6L4.5 9l5.6-1.4z"/></svg>
+        100+ AUTOMATIONS DELIVERED
+      </span>
+      <h1>I Automate Your <span class="accent">Business</span> with AI.</h1>
+      <p class="sub">Certified in n8n, Make.com and Zapier. I design AI agents, CRM pipelines and chat bots that quietly run your lead capture, onboarding and sales ops — around the clock.</p>
+      <div class="hero-actions">
+        <a class="btn nm-accent" href="https://calendly.com/zedsibal/oliver-calendar" target="_blank" rel="noopener noreferrer">
+          Book a Free Automation Audit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn nm-press" href="#work">See My Work</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- Visual anchor: hub-and-spoke AI graphic sunk into a soft frame -->
+      <div class="hero-frame nm-raised-lg">
+        <div class="nm-inset">
+          <img src="images/hero.png" width="1280" height="1024" fetchpriority="high"
+               alt="AI robot mascot at the center of a hub-and-spoke automation diagram connected to tool cards" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="tool-list" id="toolList"></ul>
+</section>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about" class="wrap">
+  <div class="about-grid">
+    <div class="reveal">
+      <!-- Rounded SQUARE frame (not a circle): raised shell + inset well -->
+      <div class="photo-shell nm-raised-lg">
+        <div class="photo-well nm-inset">
+          <img src="images/profile.png" width="540" height="720" loading="lazy" decoding="async"
+               alt="Oliver Sain, AI Automation Specialist &amp; Technical Virtual Assistant" />
+        </div>
+      </div>
+    </div>
+    <div class="about-body reveal">
+      <h2 class="h2">About Me</h2>
+      <p>I'm Oliver Sain, an AI automation specialist &amp; technical virtual assistant with 100+ completed automation projects. I build the invisible machinery behind growing businesses — lead capture, CRM automation, AI chat agents, HR/IT onboarding bots, job-search pipelines, sales ops reporting and WhatsApp/Telegram bots.</p>
+      <p>Certified in Make.com, Zapier and n8n, with end-to-end GoHighLevel training. I work hands-on with HubSpot, Pipedrive, Monday.com, Asana, Notion, Airtable and Supabase — so your tools stop living on separate islands.</p>
+      <ul class="cert-list" id="certList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SKILLS ════════ -->
+<section id="skills" class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Certifications &amp; Stack</h2>
+    <p class="lead">The platforms I build in daily — grouped by what they do for your business.</p>
+  </div>
+  <div class="grid cols-3" id="skillGrid" style="margin-top:2.5rem"></div>
+</section>
+
+<!-- ════════ SERVICES ════════ -->
+<section id="services" class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Services</h2>
+    <p class="lead">Fixed-scope builds or ongoing retainers — whatever fits your operation.</p>
+  </div>
+  <div class="grid cols-3" id="serviceGrid" style="margin-top:2.5rem"></div>
+</section>
+
+<!-- ════════ PORTFOLIO ════════ -->
+<section id="work" class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Project Showcase</h2>
+    <p class="lead">A sample of 100+ delivered builds — workflow diagrams, dashboards and agent architectures. Images are placeholders pending client approval.</p>
+  </div>
+  <div class="filters" role="tablist" aria-label="Project categories" id="filters"></div>
+  <div class="masonry" id="projectGrid"></div>
+</section>
+
+<!-- ════════ PROCESS ════════ -->
+<section id="process" class="wrap">
+  <div class="reveal">
+    <h2 class="h2">How I Work</h2>
+    <p class="lead">Five steps from messy process to running system.</p>
+  </div>
+  <ol class="grid cols-5" id="processGrid" style="margin-top:2.5rem"></ol>
+</section>
+
+<!-- ════════ FREELANCE PROFILE MOCK-UPS ════════ -->
+<section class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Freelance Profiles</h2>
+    <p class="lead">Preview cards below use placeholder stats until the live profiles are linked.</p>
+  </div>
+  <div class="grid cols-2" id="platformGrid" style="margin-top:2.5rem"></div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Testimonials</h2>
+    <p class="lead">Placeholder content — real client quotes pending.</p>
+  </div>
+  <div class="grid cols-3" id="testimonialGrid" style="margin-top:2.5rem"></div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact" class="wrap">
+  <div class="reveal">
+    <h2 class="h2">Let's Automate Something</h2>
+    <p class="lead">Tell me the process that's eating your week. I'll tell you how to automate it.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <form class="contact-form nm-raised" id="contactForm">
+        <div class="form-row">
+          <label>Name<input class="field" name="name" required placeholder="Your name" /></label>
+          <label>Email<input class="field" type="email" name="email" required placeholder="you@company.com" /></label>
+        </div>
+        <label>What do you want to automate?
+          <textarea class="field" name="message" rows="5" required placeholder="e.g. route inbound leads into HubSpot and follow up automatically"></textarea>
+        </label>
+        <button type="submit" class="btn nm-accent" id="submitBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
+          Send Message
+        </button>
+        <p class="muted" id="formNote" aria-live="polite" style="font-size:.75rem">Prefer instant? WhatsApp me and I usually reply within a few hours.</p>
+      </form>
+    </div>
+    <div class="contact-side reveal">
+      <a class="contact-item nm-press" href="https://wa.me/639567383315">
+        <span class="icon-tile sm nm-inset-sm accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+        <span style="min-width:0"><span class="k">Phone / WhatsApp</span><span class="v">+63 956 738 3315</span></span>
+      </a>
+      <a class="contact-item nm-press" href="mailto:oliversain1217@gmail.com">
+        <span class="icon-tile sm nm-inset-sm accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+        <span style="min-width:0"><span class="k">Email</span><span class="v">oliversain1217@gmail.com</span></span>
+      </a>
+      <a class="contact-item nm-press" href="https://aiautoflow.online">
+        <span class="icon-tile sm nm-inset-sm accent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></span>
+        <span style="min-width:0"><span class="k">Website</span><span class="v">aiautoflow.online</span></span>
+      </a>
+      <div class="side-actions">
+        <a class="btn nm-accent" href="https://calendly.com/zedsibal/oliver-calendar" target="_blank" rel="noopener noreferrer">Book a Call on Calendly</a>
+        <a class="btn nm-press" href="#upwork-placeholder">View Upwork Profile</a>
+      </div>
+      <a class="btn nm-press" href="#olj-placeholder">View OLJ Profile</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="site-footer">
+  <div class="footer-inner nm-raised">
+    <div style="min-width:0">
+      <span class="nm-emboss" style="font-family:Sora,sans-serif;font-size:1.125rem;font-weight:800">Oliver Sain<span class="accent">.</span></span>
+      <p class="muted" style="margin-top:.25rem;font-size:.875rem">aiautoflow.online · © <span id="year"></span> All rights reserved.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a class="pill nm-press" href="https://wa.me/639567383315">WhatsApp</a>
+      <a class="pill nm-press" href="mailto:oliversain1217@gmail.com">Email</a>
+      <a class="pill nm-press" href="#upwork-placeholder">Upwork</a>
+      <a class="pill nm-press" href="#olj-placeholder">OLJ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* ─────────────────────────────────────────────────────────────────────────
+   CONFIG — everything below is data. Add projects / tools / services here;
+   no markup changes needed.
+   ───────────────────────────────────────────────────────────────────────── */
+const NAV_LINKS = [
+  { label: "About", href: "#about" }, { label: "Skills", href: "#skills" },
+  { label: "Services", href: "#services" }, { label: "Work", href: "#work" },
+  { label: "Process", href: "#process" }, { label: "Contact", href: "#contact" },
+];
+
+/* slug = Simple Icons slug; null → lettered accent tile */
+const SKILL_GROUPS = [
+  { category: "Automation Platforms", items: [
+    { name: "n8n", slug: "n8n", color: "EA4B71" },
+    { name: "Make.com", slug: "make", color: "6D00CC" },
+    { name: "Zapier", slug: "zapier", color: "FF4F00" }]},
+  { category: "CRM", items: [
+    { name: "HubSpot", slug: "hubspot", color: "FF7A59" },
+    { name: "Pipedrive", slug: "pipedrive", color: "017737" },
+    { name: "GoHighLevel", slug: null, color: "2E7DF7" }]},
+  { category: "Project Management", items: [
+    { name: "Monday.com", slug: "mondaydotcom", color: "FF3D57" },
+    { name: "Asana", slug: "asana", color: "F06A6A" },
+    { name: "Notion", slug: "notion", color: "111111" }]},
+  { category: "Web Dev", items: [
+    { name: "GitHub", slug: "github", color: "181717" },
+    { name: "WordPress", slug: "wordpress", color: "21759B" },
+    { name: "GoHighLevel", slug: null, color: "2E7DF7" }]},
+  { category: "Databases", items: [
+    { name: "Airtable", slug: "airtable", color: "18BFFF" },
+    { name: "Supabase", slug: "supabase", color: "3FCF8E" },
+    { name: "OpenAI", slug: "openai", color: "412991" }]},
+];
+
+const HERO_TOOLS = [
+  { brand: { name: "Zapier", slug: "zapier", color: "FF4F00" }, blurb: "5,000+ app connections" },
+  { brand: { name: "Make.com", slug: "make", color: "6D00CC" }, blurb: "Visual scenario builder" },
+  { brand: { name: "n8n", slug: "n8n", color: "EA4B71" }, blurb: "Self-hosted AI workflows" },
+  { brand: { name: "GoHighLevel", slug: null, color: "2E7DF7" }, blurb: "Full agency CRM setup" },
+  { brand: { name: "Supabase", slug: "supabase", color: "3FCF8E" }, blurb: "Postgres data backend" },
+  { brand: { name: "Notion", slug: "notion", color: "111111" }, blurb: "Ops docs & databases" },
+  { brand: { name: "WordPress", slug: "wordpress", color: "21759B" }, blurb: "Sites & form capture" },
+  { brand: { name: "AI Chatbot", slug: null, color: "5B9DF9" }, blurb: "24/7 lead qualification" },
+  { brand: { name: "Vapi", slug: null, color: "5B9DF9" }, blurb: "AI voice agents" },
+];
+
+const SVG = {
+  Workflow: '<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M6.5 10v4a3 3 0 0 0 3 3H14"/>',
+  Bot: '<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/>',
+  Database: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+  MessagesSquare: '<path d="M4 4h13a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H8l-4 3V4Z"/><path d="M20 9h.5A1.5 1.5 0 0 1 22 10.5V21l-3-2.5h-6"/>',
+  Rocket: '<path d="M5 15c-1 2-1 5-1 5s3 0 5-1"/><path d="M9 15 5 11c1-6 6-9 12-9 0 6-3 11-9 12Z"/><circle cx="14.5" cy="8.5" r="1.5"/>',
+  Magnet: '<path d="M6 3H3v9a9 9 0 0 0 18 0V3h-3v9a6 6 0 0 1-12 0Z"/><path d="M3 8h3M18 8h3"/>',
+};
+
+const SERVICES = [
+  { title: "Workflow Automation", icon: "Workflow", body: "End-to-end n8n, Make and Zapier builds that remove manual busywork from your daily operations." },
+  { title: "AI Agent Development", icon: "Bot", body: "Tool-using agents with memory that draft, decide, enrich and act inside your existing stack." },
+  { title: "CRM Integration", icon: "Database", body: "HubSpot, Pipedrive and GoHighLevel wired to your forms, calendars, billing and reporting." },
+  { title: "Chatbot Development", icon: "MessagesSquare", body: "WhatsApp, Telegram and website bots that qualify leads and book calls while you sleep." },
+  { title: "GoHighLevel Setup", icon: "Rocket", body: "Snapshots, pipelines, funnels and nurture sequences configured end-to-end for agencies." },
+  { title: "Lead Gen Automation", icon: "Magnet", body: "Scraping, enrichment, scoring and outbound sequences that keep the pipeline permanently warm." },
+];
+
+const PROCESS = [
+  { step: "01", title: "Discovery", body: "We map your current process, bottlenecks and tools in a short working call." },
+  { step: "02", title: "Build", body: "I architect and build the workflow, with clear naming and documented logic." },
+  { step: "03", title: "Test", body: "Edge cases, retries and error branches are stress-tested with real data." },
+  { step: "04", title: "Deploy", body: "Go live with monitoring, alerting and a handover walkthrough video." },
+  { step: "05", title: "Support", body: "Ongoing tweaks, scaling and new automations as your business grows." },
+];
+
+const PROJECT_CATEGORIES = ["All","Sales Ops","AI Agents","Chatbots","HR/IT Automation","CRM Integrations"];
+const U = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&q=60`;
+const PROJECTS = [
+  { id:"p1", title:"Lead Capture → CRM Router", description:"Form submissions scored, routed and assigned to the right sales agent in seconds.", category:"Sales Ops", image:U("1551288049-bebda4e38f71"), tall:true },
+  { id:"p2", title:"Sales Ops Reporting Hub", description:"Nightly pipeline digest pushed to Slack and Google Sheets from HubSpot.", category:"Sales Ops", image:U("1460925895917-afdab827c52f") },
+  { id:"p3", title:"Research Agent with Memory", description:"n8n AI agent using Postgres memory and web tools to enrich inbound leads.", category:"AI Agents", image:U("1677442136019-21780ecad995") },
+  { id:"p4", title:"Voice Booking Agent", description:"Vapi voice agent that answers calls, qualifies and books straight into the calendar.", category:"AI Agents", image:U("1589254065878-42c9da997008"), tall:true },
+  { id:"p5", title:"WhatsApp Support Bot", description:"Reply routing, media handling and human handover built on a WAHA trigger.", category:"Chatbots", image:U("1611606063065-ee7946f0787a") },
+  { id:"p6", title:"Telegram Clinic Assistant", description:"Patient records, medication reminders and search over a Postgres backend.", category:"Chatbots", image:U("1516321318423-f06f85e504b3") },
+  { id:"p7", title:"Employee Onboarding Bot", description:"Form submission provisions accounts across Entra ID, Jira and Slack.", category:"HR/IT Automation", image:U("1521737604893-d14cc237f11d"), tall:true },
+  { id:"p8", title:"IT Ticket Enrichment", description:"Incoming tickets classified, enriched and escalated with AI triage.", category:"HR/IT Automation", image:U("1573164713988-8665fc963095") },
+  { id:"p9", title:"Webflow ↔ Airtable Sync", description:"Two-way record sync with routers, filters and failure alerting in Make.", category:"CRM Integrations", image:U("1555949963-aa79dcee981c") },
+  { id:"p10", title:"Pipedrive Deal Automation", description:"Stage-based tasks, invoices and follow-up emails triggered automatically.", category:"CRM Integrations", image:U("1454165804606-c3d57bc86b40") },
+  { id:"p11", title:"Job Search Automation", description:"Daily scrape, AI match scoring and Gmail digest of relevant roles.", category:"AI Agents", image:U("1486312338219-ce68d2c6f44d") },
+  { id:"p12", title:"Quote-to-Cash Flow", description:"Proposal approval, e-sign and invoicing chained across four systems.", category:"Sales Ops", image:U("1450101499163-c8848c66ca85") },
+];
+
+const TESTIMONIALS = [
+  { name:"Placeholder Client", role:"Agency Owner", quote:"Placeholder testimonial copy — replace with a real client quote before launch.", initials:"PC" },
+  { name:"Placeholder Client", role:"Head of Sales", quote:"Placeholder testimonial copy — replace with a real client quote before launch.", initials:"PC" },
+  { name:"Placeholder Client", role:"Ops Manager", quote:"Placeholder testimonial copy — replace with a real client quote before launch.", initials:"PC" },
+];
+
+/* ── Helpers ───────────────────────────────────────────────────────────── */
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const el = (id) => document.getElementById(id);
+const lucide = (path, size = 20) =>
+  `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+
+/* Official brand logo from the Simple Icons CDN, tinted to the brand colour.
+   Brands without a slug (or a failed request) fall back to a lettered tile. */
+function brandIcon(b, size = 28) {
+  if (!b.slug) {
+    return `<span class="letter-tile" aria-hidden="true" style="width:${size}px;height:${size}px;font-size:${Math.round(size*0.45)}px;background:#${b.color}">${esc(b.name[0])}</span>`;
+  }
+  return `<img src="https://cdn.simpleicons.org/${b.slug}/${b.color}" alt="${esc(b.name)} logo" width="${size}" height="${size}" loading="lazy"
+    onerror="this.outerHTML='<span class=&quot;letter-tile&quot; style=&quot;width:${size}px;height:${size}px;font-size:${Math.round(size*0.45)}px;background:#${b.color}&quot;>${esc(b.name[0])}</span>'" />`;
+}
+
+/* ── Render ────────────────────────────────────────────────────────────── */
+el("navDesktop").innerHTML =
+  NAV_LINKS.map(l => `<a class="nav-link" href="${l.href}">${l.label}</a>`).join("") +
+  `<a class="btn nm-accent" href="#contact" style="margin-left:.5rem;padding:.625rem 1.25rem">Hire Me</a>`;
+
+el("navMobile").innerHTML =
+  NAV_LINKS.map(l => `<a class="nm-raised-sm" href="${l.href}">${l.label}</a>`).join("") +
+  `<a class="nm-accent" href="#contact" style="border-radius:1rem;padding:.75rem 1rem;text-align:center;font-weight:700">Hire Me</a>`;
+
+el("toolList").innerHTML = HERO_TOOLS.map(t => `
+  <li class="reveal"><div class="tool-card nm-lift">
+    <span class="icon-tile nm-inset-sm">${brandIcon(t.brand, 24)}</span>
+    <span style="min-width:0">
+      <span class="tool-name">${esc(t.brand.name)}</span>
+      <span class="tool-blurb">${esc(t.blurb)}</span>
+    </span>
+  </div></li>`).join("");
+
+el("certList").innerHTML = ["Certified n8n","Certified Make.com","Certified Zapier","GoHighLevel"]
+  .map(c => `<li class="pill nm-raised-sm"><span class="accent">${lucide('<circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/>',16)}</span>${c}</li>`).join("");
+
+el("skillGrid").innerHTML = SKILL_GROUPS.map(g => `
+  <div class="reveal"><div class="skill-card nm-raised">
+    <h3>${esc(g.category)}</h3>
+    <ul class="skill-items">${g.items.map(b => `
+      <li class="skill-item nm-lift">${brandIcon(b, 28)}<span class="label">${esc(b.name)}</span></li>`).join("")}
+    </ul>
+  </div></div>`).join("");
+
+el("serviceGrid").innerHTML = SERVICES.map(s => `
+  <div class="reveal"><div class="card nm-press">
+    <span class="icon-tile nm-inset-sm accent">${lucide(SVG[s.icon], 24)}</span>
+    <h3>${esc(s.title)}</h3><p>${esc(s.body)}</p>
+  </div></div>`).join("");
+
+el("processGrid").innerHTML = PROCESS.map(p => `
+  <li class="reveal"><div class="card nm-lift">
+    <span class="step-num nm-inset-sm">${p.step}</span>
+    <h3 style="font-size:1rem">${esc(p.title)}</h3><p>${esc(p.body)}</p>
+  </div></li>`).join("");
+
+const star = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9Z"/></svg>';
+function platformCard(platform, href, stats) {
+  return `<div class="reveal"><div class="card nm-raised">
+    <div class="platform-head">
+      <h3 style="margin:0;font-size:1.0625rem;font-weight:700">${platform}</h3>
+      <span class="badge-placeholder nm-inset-sm">Placeholder</span>
+    </div>
+    <div class="stars" aria-label="Placeholder rating 5 out of 5">${star.repeat(5)}
+      <span class="muted" style="margin-left:.5rem;font-size:.875rem">5.0 (placeholder)</span></div>
+    <dl class="stats">${stats.map(s => `<div class="stat nm-inset-sm"><dt>${s.label}</dt><dd>${s.value}</dd></div>`).join("")}</dl>
+    <a class="btn nm-press" href="${href}" style="margin-top:1.5rem;display:block;text-align:center">View Full Profile</a>
+    <p class="muted" style="margin-top:.75rem;text-align:center;font-size:.75rem">Mock-up preview — real link coming soon.</p>
+  </div></div>`;
+}
+el("platformGrid").innerHTML =
+  platformCard("Upwork", "#upwork-placeholder", [{label:"Jobs",value:"00"},{label:"Hours",value:"000"},{label:"Success",value:"00%"}]) +
+  platformCard("OnlineJobs.ph", "#olj-placeholder", [{label:"ID Proof",value:"00"},{label:"Reviews",value:"00"},{label:"Rating",value:"0.0"}]);
+
+el("testimonialGrid").innerHTML = TESTIMONIALS.map(t => `
+  <div class="reveal"><figure class="card nm-lift">
+    <span class="accent">${lucide('<path d="M9 7H5a2 2 0 0 0-2 2v4h6V7Zm10 0h-4a2 2 0 0 0-2 2v4h6V7Z"/><path d="M9 13c0 3-2 4-4 4m14-4c0 3-2 4-4 4"/>', 22)}</span>
+    <blockquote class="quote-body" style="margin-inline:0">${esc(t.quote)}</blockquote>
+    <figcaption class="quote-foot">
+      <span class="initials nm-inset-sm">${esc(t.initials)}</span>
+      <span style="min-width:0">
+        <span style="display:block;font-size:.875rem;font-weight:700">${esc(t.name)}</span>
+        <span class="muted" style="display:block;font-size:.75rem">${esc(t.role)}</span>
+      </span>
+    </figcaption>
+  </figure></div>`).join("");
+
+/* ── Scroll reveal (unobserves after firing — cheap with 20+ cards) ────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (!e.isIntersecting) return;
+    setTimeout(() => e.target.classList.add("in"), (i % 6) * 60);
+    revealObserver.unobserve(e.target);
+  });
+}, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+function observeReveals() {
+  document.querySelectorAll(".reveal:not(.in)").forEach(n => revealObserver.observe(n));
+}
+/* ── Portfolio filtering (config-driven) ───────────────────────────────── */
+let filter = "All";
+function renderFilters() {
+  el("filters").innerHTML = PROJECT_CATEGORIES.map(c =>
+    `<button class="filter" role="tab" aria-selected="${filter === c}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+}
+function renderProjects() {
+  const list = filter === "All" ? PROJECTS : PROJECTS.filter(p => p.category === filter);
+  el("projectGrid").innerHTML = list.map(p => `
+    <article class="project nm-lift reveal">
+      <div class="shot nm-inset-sm">
+        <img src="${p.image}" alt="${esc(p.title)}" loading="lazy" decoding="async" class="${p.tall ? "tall" : ""}" />
+      </div>
+      <div class="meta">
+        <span class="eyebrow">${esc(p.category)}</span>
+        <h3>${esc(p.title)}</h3>
+        <p class="desc">${esc(p.description)}</p>
+      </div>
+    </article>`).join("");
+  observeReveals();
+}
+el("filters").addEventListener("click", (e) => {
+  const btn = e.target.closest(".filter");
+  if (!btn) return;
+  filter = btn.dataset.cat;
+  renderFilters();
+  renderProjects();
+});
+renderFilters();
+renderProjects();
+
+/* ── Mobile nav ────────────────────────────────────────────────────────── */
+const toggle = el("navToggle"), mobile = el("navMobile");
+toggle.addEventListener("click", () => {
+  const open = mobile.hasAttribute("hidden");
+  mobile.toggleAttribute("hidden", !open);
+  toggle.setAttribute("aria-expanded", String(open));
+  toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+});
+mobile.addEventListener("click", (e) => {
+  if (e.target.closest("a")) { mobile.setAttribute("hidden", ""); toggle.setAttribute("aria-expanded", "false"); }
+});
+
+/* ── Active-section nav highlight ──────────────────────────────────────── */
+const sections = NAV_LINKS.map(l => document.querySelector(l.href)).filter(Boolean);
+const navObserver = new IntersectionObserver((entries) => {
+  const vis = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (!vis) return;
+  document.querySelectorAll(".nav-link").forEach(a =>
+    a.classList.toggle("active", a.getAttribute("href") === "#" + vis.target.id));
+}, { rootMargin: "-45% 0px -50% 0px", threshold: [0, .25, .6] });
+sections.forEach(s => navObserver.observe(s));
+
+observeReveals();
+
+/* ── Contact form (front-end mock with explicit loading state) ─────────── */
+const form = el("contactForm"), btn = el("submitBtn"), note = el("formNote");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spin">${lucide('<path d="M21 12a9 9 0 1 1-6.2-8.6"/>', 16)}</span> Sending…`;
+  setTimeout(() => {
+    btn.textContent = "Message Sent";
+    note.textContent = "Thanks! This demo form doesn't deliver yet — please email or WhatsApp me directly.";
+  }, 1100);
+});
+
+el("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

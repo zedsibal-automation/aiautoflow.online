@@ -1,0 +1,302 @@
+/* ==========================================================================
+   Oliver Sain — Neumorphic (Soft UI) portfolio
+   Plain CSS, no build step. Light mode only.
+
+   NEUMORPHISM IN ONE LINE: an element is the SAME colour as the page, and
+   depth comes only from a PAIR of shadows — a white highlight from the
+   top-left (the imaginary light source) and a dark shadow from the
+   bottom-right. Flip both shadows to `inset` and the element looks pressed.
+   ========================================================================== */
+
+:root {
+  /* Exact palette */
+  --bg-base: #eef2f7;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d3d9e2;
+  --accent: #5b9df9;
+
+  /* Dark neutral ink (not pure gray) — WCAG AA against #EEF2F7 */
+  --ink: #3d4557;
+  --ink-soft: #6b7488;
+
+  --radius: 1.25rem;
+  --maxw: 72rem;
+
+  /* Shadow recipes: small offset + large blur = soft UI */
+  --nm-raised: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+  --nm-raised-sm: 3px 3px 7px var(--shadow-dark), -3px -3px 7px var(--shadow-light);
+  --nm-raised-lg: 12px 12px 28px var(--shadow-dark), -12px -12px 28px var(--shadow-light);
+  --nm-pressed: inset 4px 4px 9px var(--shadow-dark), inset -4px -4px 9px var(--shadow-light);
+  --nm-pressed-sm: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+}
+
+/* ── Reset & base ───────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--ink);
+  font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Sora", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p { margin: 0; }
+ul, ol, dl, dd { margin: 0; padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; border: 0; }
+
+/* Visible, on-brand focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ── Soft-UI utility classes ────────────────────────────────────────────
+   `will-change` is deliberately NOT used: with 20+ shadowed cards on
+   screen, promoting each one to its own compositor layer costs more than
+   it saves. We animate only transform + box-shadow, which stay cheap. */
+.nm-raised    { background: var(--bg-base); box-shadow: var(--nm-raised); }
+.nm-raised-sm { background: var(--bg-base); box-shadow: var(--nm-raised-sm); }
+.nm-raised-lg { background: var(--bg-base); box-shadow: var(--nm-raised-lg); }
+.nm-inset     { background: var(--bg-base); box-shadow: var(--nm-pressed); }
+.nm-inset-sm  { background: var(--bg-base); box-shadow: var(--nm-pressed-sm); }
+
+/* Pressable: lifts on hover, collapses into a sunken "push" on :active */
+.nm-press {
+  background: var(--bg-base);
+  box-shadow: var(--nm-raised);
+  transition: box-shadow .22s ease, transform .22s ease;
+  cursor: pointer;
+}
+.nm-press:hover { box-shadow: var(--nm-raised-lg); transform: translateY(-2px); }
+.nm-press:active { box-shadow: var(--nm-pressed); transform: translateY(0); }
+
+/* Subtle hover lift for non-interactive tiles */
+.nm-lift {
+  background: var(--bg-base);
+  box-shadow: var(--nm-raised-sm);
+  transition: box-shadow .22s ease, transform .22s ease;
+}
+.nm-lift:hover { box-shadow: var(--nm-raised); transform: translateY(-3px); }
+
+/* Embossed text: the same two-light-source trick, applied to glyphs */
+.nm-emboss {
+  color: var(--ink);
+  text-shadow: -1px -1px 1px var(--shadow-light), 1px 1px 2px var(--shadow-dark);
+}
+
+/* Accent CTA — keeps a coloured double shadow so it still reads "soft" */
+.nm-accent {
+  background: linear-gradient(145deg, color-mix(in oklab, var(--accent) 92%, white), var(--accent));
+  color: #fff;
+  box-shadow:
+    5px 5px 12px color-mix(in oklab, var(--accent) 35%, var(--shadow-dark)),
+    -5px -5px 12px var(--shadow-light);
+  transition: box-shadow .22s ease, transform .22s ease;
+  cursor: pointer;
+}
+.nm-accent:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 20px color-mix(in oklab, var(--accent) 40%, var(--shadow-dark)),
+    -8px -8px 20px var(--shadow-light);
+}
+.nm-accent:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 4px 4px 9px color-mix(in oklab, var(--accent) 55%, black),
+    inset -3px -3px 8px color-mix(in oklab, var(--accent) 60%, white);
+}
+
+/* ── Helpers ────────────────────────────────────────────────────────────── */
+.wrap { max-width: var(--maxw); margin-inline: auto; padding: 5rem 1rem; }
+@media (min-width: 640px) { .wrap { padding-inline: 1.5rem; } }
+
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.lead { margin-top: .75rem; max-width: 42rem; color: var(--ink-soft); }
+.muted { color: var(--ink-soft); }
+.h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 800; }
+.pill { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; font-weight: 600; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 1rem; padding: .875rem 1.5rem; font-size: .875rem; font-weight: 700; }
+.grid { display: grid; gap: 1.5rem; }
+.cols-2 { grid-template-columns: 1fr; }
+.cols-3 { grid-template-columns: 1fr; }
+.cols-5 { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .cols-2, .cols-3, .cols-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+.icon-tile { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; border-radius: 1rem; flex: none; }
+.icon-tile.sm { width: 3rem; height: 3rem; }
+.accent { color: var(--accent); }
+
+/* Lettered fallback tile for brands without an official icon */
+.letter-tile {
+  display: grid; place-items: center; border-radius: .5rem;
+  background: var(--accent); color: #fff; font-weight: 800; font-family: "Sora", sans-serif;
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg-base) 85%, transparent);
+  backdrop-filter: blur(12px);
+}
+.header-inner {
+  max-width: var(--maxw); margin-inline: auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 640px) { .header-inner { padding-inline: 1.5rem; } }
+.logo-name { display: block; font-family: "Sora", sans-serif; font-size: 1.25rem; font-weight: 800; }
+.logo-sub { display: none; font-size: 11px; font-weight: 500; letter-spacing: .06em; color: var(--ink-soft); }
+@media (min-width: 640px) { .logo-sub { display: block; } .logo-name { font-size: 1.5rem; } }
+
+.nav-desktop { display: none; align-items: center; gap: .5rem; }
+@media (min-width: 1024px) { .nav-desktop { display: flex; } .nav-toggle { display: none !important; } }
+.nav-link { border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; font-weight: 600; transition: all .2s ease; }
+.nav-link.active { box-shadow: var(--nm-pressed-sm); color: var(--accent); }
+.nav-link:not(.active) { box-shadow: var(--nm-raised-sm); }
+.nav-link:not(.active):hover { transform: translateY(-2px); }
+
+.nav-toggle { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 1rem; }
+.nav-mobile { margin: 0 1rem 1rem; padding: .75rem; border-radius: 1.5rem; display: grid; gap: .5rem; }
+.nav-mobile[hidden] { display: none; }
+.nav-mobile a { border-radius: 1rem; padding: .75rem 1rem; font-size: .875rem; font-weight: 600; }
+
+/* ── Hero ───────────────────────────────────────────────────────────────── */
+.hero-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 1024px) { .hero-grid { grid-template-columns: 1fr 1.05fr; } }
+.hero h1 { margin-top: 1.5rem; font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.05; font-weight: 800; }
+.hero p.sub { margin-top: 1.25rem; max-width: 36rem; color: var(--ink-soft); font-size: 1.0625rem; line-height: 1.7; }
+.hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+.hero-frame { border-radius: 2.5rem; padding: 1rem; }
+.hero-frame > div { border-radius: 2rem; overflow: hidden; }
+.hero-frame img { width: 100%; height: auto; mix-blend-mode: multiply; }
+
+.tool-list { margin-top: 3rem; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .tool-list { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px) { .tool-list { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.tool-card { display: flex; align-items: center; gap: 1rem; border-radius: 1rem; padding: 1rem; }
+.tool-card .icon-tile { width: 3rem; height: 3rem; border-radius: .75rem; }
+.tool-name { display: block; font-family: "Sora", sans-serif; font-size: .875rem; font-weight: 700; }
+.tool-blurb { display: block; font-size: .75rem; color: var(--ink-soft); }
+
+/* ── About ──────────────────────────────────────────────────────────────── */
+.about-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 768px) { .about-grid { grid-template-columns: auto 1fr; } }
+/* Rounded SQUARE photo frame: raised outer shell wrapping an inset well */
+.photo-shell { border-radius: 2rem; padding: 1rem; width: fit-content; margin-inline: auto; }
+.photo-well { border-radius: 1.5rem; overflow: hidden; }
+.photo-well img { width: 14rem; height: 18rem; object-fit: cover; }
+@media (min-width: 640px) { .photo-well img { width: 18rem; height: 24rem; } }
+.about-body p { margin-top: 1rem; color: var(--ink-soft); line-height: 1.75; }
+.cert-list { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* ── Skills ─────────────────────────────────────────────────────────────── */
+.skill-card { border-radius: 1.5rem; padding: 1.5rem; height: 100%; }
+.skill-card h3 { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.skill-items { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+.skill-item { display: grid; place-items: center; gap: .5rem; border-radius: 1rem; padding: .75rem; }
+.skill-item span.label { width: 100%; text-align: center; font-size: 11px; font-weight: 600; color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── Services / Process ─────────────────────────────────────────────────── */
+.card { border-radius: 1.5rem; padding: 1.5rem; height: 100%; }
+.card h3 { margin-top: 1.25rem; font-size: 1.0625rem; font-weight: 700; }
+.card p { margin-top: .5rem; font-size: .875rem; line-height: 1.7; color: var(--ink-soft); }
+.step-num { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 1rem; font-family: "Sora", sans-serif; font-size: .875rem; font-weight: 800; color: var(--accent); }
+
+/* ── Portfolio ──────────────────────────────────────────────────────────── */
+.filters { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+.filter { border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; font-weight: 600; background: var(--bg-base); box-shadow: var(--nm-raised); transition: all .2s ease; cursor: pointer; }
+.filter:hover { transform: translateY(-2px); }
+.filter[aria-selected="true"] { box-shadow: var(--nm-pressed-sm); color: var(--accent); transform: none; }
+
+/* CSS columns give a masonry feel with zero layout JS */
+.masonry { margin-top: 2.5rem; column-gap: 1.5rem; }
+@media (min-width: 640px) { .masonry { column-count: 2; } }
+@media (min-width: 1024px) { .masonry { column-count: 3; } }
+.masonry > * { break-inside: avoid; margin-bottom: 1.5rem; }
+.project { border-radius: 1.5rem; padding: .75rem; overflow: hidden; }
+.project .shot { border-radius: 1rem; overflow: hidden; }
+.project img { width: 100%; height: 13rem; object-fit: cover; transition: transform .5s ease; }
+.project img.tall { height: 18rem; }
+.project:hover img { transform: scale(1.04); }
+.project .meta { padding: 1rem .5rem .5rem; }
+.project h3 { margin-top: .25rem; font-size: 1rem; font-weight: 700; }
+.project .desc { margin-top: .25rem; font-size: .875rem; line-height: 1.7; color: var(--ink-soft); }
+@media (min-width: 640px) {
+  .project .desc { max-height: 0; overflow: hidden; opacity: 0; transition: opacity .3s ease, max-height .3s ease; }
+  .project:hover .desc, .project:focus-within .desc { max-height: 8rem; opacity: 1; }
+}
+
+/* ── Platform mock cards ────────────────────────────────────────────────── */
+.platform-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.badge-placeholder { border-radius: 999px; padding: .25rem .75rem; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.stars { margin-top: .75rem; display: flex; align-items: center; gap: .25rem; color: var(--accent); }
+.stats { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .75rem; }
+.stat { border-radius: 1rem; padding: .75rem; text-align: center; }
+.stat dt { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+.stat dd { margin: .25rem 0 0; font-family: "Sora", sans-serif; font-size: .875rem; font-weight: 700; }
+
+/* ── Testimonials ───────────────────────────────────────────────────────── */
+figure.card { margin: 0; }
+.quote-body { margin: 1rem 0 0; font-size: .875rem; line-height: 1.7; color: var(--ink-soft); }
+.quote-foot { margin-top: 1.5rem; display: flex; align-items: center; gap: .75rem; }
+.initials { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: .75rem; font-family: "Sora", sans-serif; font-size: .75rem; font-weight: 700; }
+
+/* ── Contact ────────────────────────────────────────────────────────────── */
+.contact-grid { margin-top: 2.5rem; display: grid; gap: 1.5rem; }
+@media (min-width: 1024px) { .contact-grid { grid-template-columns: 1.2fr 1fr; } }
+.contact-form { border-radius: 1.5rem; padding: 1.5rem; display: grid; gap: 1rem; }
+@media (min-width: 640px) { .contact-form { padding: 2rem; } .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; } }
+.contact-form label { display: grid; gap: .5rem; font-size: .875rem; font-weight: 600; }
+/* Inputs are INSET — the field looks carved into the surface */
+.field { width: 100%; border: 0; border-radius: 1rem; padding: .75rem 1rem; font: inherit; font-size: .875rem; color: var(--ink); background: var(--bg-base); box-shadow: var(--nm-pressed); outline: none; resize: vertical; }
+.field::placeholder { color: color-mix(in srgb, var(--ink-soft) 70%, transparent); }
+.contact-side { display: grid; align-content: start; gap: 1rem; }
+.contact-item { display: flex; align-items: center; gap: 1rem; border-radius: 1.5rem; padding: 1.25rem; }
+.contact-item .k { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); }
+.contact-item .v { display: block; font-size: .875rem; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.side-actions { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .side-actions { grid-template-columns: 1fr 1fr; } }
+button[disabled] { opacity: .8; cursor: default; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.site-footer { max-width: var(--maxw); margin-inline: auto; padding: 0 1rem 3rem; }
+@media (min-width: 640px) { .site-footer { padding-inline: 1.5rem; } }
+.footer-inner { display: grid; gap: 1.5rem; align-items: center; border-radius: 1.5rem; padding: 1.5rem; }
+@media (min-width: 640px) { .footer-inner { grid-template-columns: minmax(0,1fr) auto; } }
+.footer-links { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
